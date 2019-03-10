@@ -1,0 +1,33 @@
+{
+  "name": "miniprogram-cache",
+  "version": "0.1.0",
+  "description": "a simple interface defination for storage and default implementation for wx-miniprogram environment",
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "es/",
+    "src/"
+  ],
+  "scripts": {
+    "start": "npm run build",
+    "build": "npm run build:es5 && npm run build:es6",
+    "build:es5": "tsc --target es5 -d --outDir dist",
+    "build:es6": "tsc -m es6 --target es6 --outDir es",
+    "test": "mocha -r ts-node/register test/test.ts",
+    "pub": "npm run test && npm run build && npm publish --access public"
+  },
+  "keywords": [
+    "miniprogram",
+    "storage"
+  ],
+  "author": "Jing Zhao",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "ts-node": "^8.0.3",
+    "typings": "^2.1.1"
+  }
+}
